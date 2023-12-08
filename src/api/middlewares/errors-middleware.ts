@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { HttpErrorResponse, TransformError } from "app/utils/errors";
+import { HttpErrorResponse } from "app/utils/errors";
 import logger from "app/utils/logger";
 
 export function errorsMiddleware() {
@@ -13,12 +13,6 @@ export function errorsMiddleware() {
     if (err instanceof HttpErrorResponse) {
       logger.error("HttpErrorResponse", err);
       res.status(err.statusCode).send(err.body);
-      return;
-    }
-
-    if (err instanceof TransformError) {
-      logger.error("TransformError", err);
-      res.status(404).send({ message: err.message, errors: err.validationErrors });
       return;
     }
 

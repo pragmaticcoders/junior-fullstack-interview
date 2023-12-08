@@ -1,15 +1,15 @@
 # nodejs-interview-exercise
 
-Simple backend API for skills list application. 
+Simple backend API for skills list application.
 
 Project can contain a few "not the best" solutions that can be pointed out by the candidate during interview.
 
 ## prerequisites
 
-- node v14.17.0+
-- npm v6.14.15+
-- docker-compose version 1.25.0+
-- docker version 20.10.7+
+- node v20.10.0+
+- npm v10.2.3+
+- docker-compose version 2.22.0+
+- docker version 24.0.6+
 
 ## run tests
 

@@ -1,5 +1,6 @@
+import { join } from "node:path";
+
 import { createEnvReader } from "app/utils";
-import { join } from "path";
 import { Knex } from "knex";
 import { AsyncReturnType } from "app/utils/types";
 

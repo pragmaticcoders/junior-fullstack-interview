@@ -1,4 +1,4 @@
-# nodejs-interview-exercise
+# Junior fullstack interview exercise
 
 Simple backend API for skills list application.
 

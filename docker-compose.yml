@@ -1,0 +1,24 @@
+version: "3.4"
+
+services:
+  postgres:
+    container_name: fullstack-interview-postgres
+    image: postgres:11.6
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      PGDATA: /data/postgres
+      DATABASE: fullstack_interview_dev_local
+      DATABASE_TESTS: fullstack_interview_dev_tests
+    volumes:
+      - ./scripts/db/init:/docker-entrypoint-initdb.d
+    ports:
+      - "5434:5432"
+    networks:
+      - postgres
+    # To log all queries:
+    # command: ["postgres", "-c", "log_statement=all"]
+
+networks:
+  postgres:
+    driver: bridge
